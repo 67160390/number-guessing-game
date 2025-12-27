@@ -11,10 +11,10 @@ function initializeGame() {
 }
 // ฟังก์ชันตรวจสอบการทาย
 function checkGuess() {
-  const guessInput = document.getElementById("guessInput");
-  const guessValue = parseInt(guessInput.value);
-  const resultContainer = document.getElementById("resultContainer");
-  // Validation: ตรวจสอบว่าใส่ตัวเลขหรือไม่
+ const guessInput = document.getElementById("guessInput");
+ const guessValue = parseInt(guessInput.value);
+ const resultContainer = document.getElementById("resultContainer");
+ // ... validation code ...
   if (isNaN(guessValue) || guessInput.value === "") {
     resultContainer.innerHTML = `
  <div class="alert alert-danger" role="alert">
@@ -33,8 +33,8 @@ function checkGuess() {
     return;
   }
   attemptCount++;
-  if (guessValue === secretNumber) {
-    resultContainer.innerHTML = `
+ if (guessValue === secretNumber) {
+ resultContainer.innerHTML = `
  <div class="alert alert-success" role="alert">
  <h5>✓ ถูกต้อง!</h5>
  <p>คุณทายถูกในครั้งที่ ${attemptCount}</p>
@@ -59,8 +59,8 @@ function checkGuess() {
 }
 // ฟังก์ชันอัปเดตจํานวนครั้ง
 function updateDisplay() {
-  const attemptsContainer = document.getElementById("attemptsContainer");
-  attemptsContainer.textContent = `ทายแล้ว: ${attemptCount} ครั้ง`;
+ const attemptsContainer = document.getElementById("attemptsContainer");
+ attemptsContainer.textContent = `ทายแล้ว: ${attemptCount} ครั้ง`;
 }
 // ฟังก์ชันเริ่มเกมใหม่
 function resetGame() {
