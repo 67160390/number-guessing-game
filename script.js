@@ -69,10 +69,22 @@ function resetGame() {
   document.getElementById("guessInput").value = "";
   document.getElementById("guessInput").focus();
 }
+// เริ่มเกมเมื่อโหลดหน้า
+window.addEventListener("load", initializeGame);
 // เพิ่มการ select text เมื่อคลิก input
 document.addEventListener("DOMContentLoaded", function () {
   const guessInput = document.getElementById("guessInput");
   guessInput.addEventListener("focus", function () {
     this.select();
   });
+});
+// เพิ่มการรองรับ Enter key
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("guessInput")
+    .addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        checkGuess();
+      }
+    });
 });
